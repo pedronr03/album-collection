@@ -59,7 +59,7 @@ class AlbumRepository {
     return albumSearch;
   };
 
-  verifyForeignKeys = async (artistId: number, genreId: number) => {
+  private verifyForeignKeys = async (artistId: number, genreId: number) => {
     const query1 = `SELECT * FROM Artist WHERE id = ?;`;
     const params1 = [artistId];
     const [[artist]] = await connection.execute<RowDataPacket[]>(query1, params1);

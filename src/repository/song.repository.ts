@@ -55,7 +55,7 @@ class SongRepository {
     return songSearch;
   }
 
-  verifyForeignKeys = async (albumId: number) => {
+  private verifyForeignKeys = async (albumId: number) => {
     const query = `SELECT * FROM Album WHERE id = ?;`;
     const params = [albumId];
     const [[album]] = await connection.execute<RowDataPacket[]>(query, params);
