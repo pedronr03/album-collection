@@ -1,0 +1,9 @@
+scalar Date
+
+type Album {
+  id: Int
+  title: String
+  releasedAt: Date
+  artist: Artist
+  genre: Genre
+}

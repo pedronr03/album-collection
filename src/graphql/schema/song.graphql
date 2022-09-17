@@ -1,0 +1,6 @@
+type Song {
+  id: Int
+  title: String
+  length: Int
+  album: Album
+}
