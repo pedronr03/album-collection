@@ -2,3 +2,12 @@ type Genre {
   id: Int
   name: String
 }
+
+input CreateGenreInput {
+  name: String!
+}
+
+input UpdateGenreInput {
+  id: Int!
+  name: String
+}

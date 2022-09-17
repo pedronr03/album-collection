@@ -4,3 +4,16 @@ type Song {
   length: Int
   album: Album
 }
+
+input CreateSongInput {
+  title: String!
+  length: Int!
+  albumId: Int!
+}
+
+input UpdateSongInput {
+  id: Int!
+  title: String
+  length: Int
+  albumId: Int
+}

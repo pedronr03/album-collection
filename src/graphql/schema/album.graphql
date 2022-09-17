@@ -7,3 +7,18 @@ type Album {
   artist: Artist
   genre: Genre
 }
+
+input CreateAlbumInput {
+  title: String!
+  releasedAt: Date!
+  artistId: Int!
+  genreId: Int!
+}
+
+input UpdateAlbumInput {
+  id: Int!
+  title: String
+  releasedAt: Date
+  artistId: Int
+  genreId: Int
+}

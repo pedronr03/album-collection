@@ -2,3 +2,12 @@ type Artist {
   id: Int
   name: String
 }
+
+input CreateArtistInput {
+  name: String!
+}
+
+input UpdateArtistInput {
+  id: Int!
+  name: String
+}

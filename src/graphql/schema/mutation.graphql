@@ -1,0 +1,16 @@
+type Mutation {
+  createAlbum(albumData: CreateAlbumInput!): Album
+  createGenre(genreData: CreateGenreInput!): Genre
+  createArtist(artistData: CreateArtistInput!): Artist
+  createSong(songData: CreateSongInput!): Song
+
+  updateAlbum(albumData: UpdateAlbumInput!): Album
+  updateGenre(genreData: UpdateGenreInput!): Genre
+  updateArtist(artistData: UpdateArtistInput!): Artist
+  updateSong(songData: UpdateSongInput!): Song
+
+  deleteAlbum(id: Int): Album
+  deleteGenre(id: Int): Genre
+  deleteArtist(id: Int): Artist
+  deleteSong(id: Int): Song
+}

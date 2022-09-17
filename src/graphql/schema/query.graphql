@@ -1,3 +1,9 @@
 type Query {
-  getAlbums: Album
+  getAlbums: [Album]
+  getAlbum(id: Int): Album
+  getGenres(id: Int): [Genre]
+  getGenre(id: Int): Genre
+  getArtists(id: Int): [Artist]
+  getArtist(id: Int): Artist
+  getSong(id: Int): Song
 }
