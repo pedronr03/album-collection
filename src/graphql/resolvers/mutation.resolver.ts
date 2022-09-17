@@ -7,6 +7,9 @@ import UpdateAlbumDto from "../../repository/dto/album/update-album-dto";
 import ArtistRepository from '../../repository/artist.repository';
 import UpdateArtistDto from '../../repository/dto/artist/update-artist-dto';
 import GenreRepository from '../../repository/genre.repository';
+import UpdateSongDto from '../../repository/dto/song/update-song-dto';
+import CreateSongDto from '../../repository/dto/song/create-song-dto';
+import SongRepository from '../../repository/song.repository';
 
 const Mutation = {
   createAlbum(_root: undefined, args: { albumData: CreateAlbumDto }) {
@@ -44,6 +47,18 @@ const Mutation = {
   deleteGenre(_root: undefined, args: { id: number }) {
     const genreRepository = new GenreRepository();
     return genreRepository.delete(args.id);
+  },
+  createSong(_root: undefined, args: { songData: CreateSongDto }) {
+    const songRepository = new SongRepository();
+    return songRepository.create(args.songData);
+  },
+  updateSong(_root: undefined, args: { songData: UpdateSongDto }) {
+    const songRepository = new SongRepository();
+    return songRepository.update(args.songData);
+  },
+  deleteSong(_root: undefined, args: { id: number }) {
+    const songRepository = new SongRepository();
+    return songRepository.delete(args.id);
   }
 };
 

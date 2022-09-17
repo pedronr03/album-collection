@@ -30,7 +30,7 @@ class GenreRepository {
     return newGenre;
   };
 
-  update = async (updateGenreDto: UpdateGenreDto) => {
+  update = async (updateGenreDto: UpdateGenreDto): Promise<Genre> => {
     const genreSearch = await this.getById(updateGenreDto.id);
     const updatedGenre = { ...genreSearch, ...updateGenreDto };
     const { id, name } = updatedGenre;
@@ -42,7 +42,7 @@ class GenreRepository {
     return updatedGenre;
   };
 
-  delete = async (id: number) => {
+  delete = async (id: number): Promise<Genre> => {
     const genreSearch = await this.getById(id);
     const query = `DELETE FROM Genre WHERE id = ?;`;
     const params = [id];

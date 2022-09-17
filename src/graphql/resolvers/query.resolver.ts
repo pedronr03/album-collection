@@ -1,6 +1,7 @@
 import AlbumRepository from "../../repository/album.repository";
 import ArtistRepository from "../../repository/artist.repository";
 import GenreRepository from "../../repository/genre.repository";
+import SongRepository from "../../repository/song.repository";
 
 const Query = {
   getAlbums() {
@@ -26,6 +27,10 @@ const Query = {
   getGenre(_root: undefined, args: { id: number }) {
     const genreRepository = new GenreRepository();
     return genreRepository.getById(args.id);
+  },
+  getSong(_root: undefined, args: { id: number }) {
+    const songRepository = new SongRepository();
+    return songRepository.getById(args.id);
   }
 };
 
