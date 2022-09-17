@@ -1,5 +1,5 @@
-import { UpdateArtistDto } from './dto/artist/update-artist-dto';
-import { CreateArtistDto } from './dto/artist/create-artist-dto';
+import UpdateArtistDto from './dto/artist/update-artist-dto';
+import CreateArtistDto from './dto/artist/create-artist-dto';
 import { ApolloError } from 'apollo-server';
 import { ResultSetHeader, RowDataPacket } from "mysql2/promise";
 import connection from "../database";
@@ -30,7 +30,7 @@ class ArtistRepository {
     return newArtist;
   };
 
-  update = async (updateArtistDto: UpdateArtistDto) => {
+  update = async (updateArtistDto: UpdateArtistDto): Promise<Artist> => {
     const artistSearch = await this.getById(updateArtistDto.id);
     const updatedArtist = { ...artistSearch, ...updateArtistDto };
     const { id, name } = updatedArtist;
@@ -42,7 +42,7 @@ class ArtistRepository {
     return updatedArtist;
   };
 
-  delete = async (id: number) => {
+  delete = async (id: number): Promise<Artist> => {
     const artistSearch = await this.getById(id);
     const query = `DELETE FROM Artist WHERE id = ?;`;
     const params = [id];

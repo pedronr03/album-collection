@@ -1,4 +1,4 @@
-export interface UpdateSongDto {
+export default interface UpdateSongDto {
   id: number
   title?: string
   length?: number

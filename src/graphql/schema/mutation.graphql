@@ -9,8 +9,8 @@ type Mutation {
   updateArtist(artistData: UpdateArtistInput!): Artist
   updateSong(songData: UpdateSongInput!): Song
 
-  deleteAlbum(id: Int): Album
-  deleteGenre(id: Int): Genre
-  deleteArtist(id: Int): Artist
-  deleteSong(id: Int): Song
+  deleteAlbum(id: Int!): Album
+  deleteGenre(id: Int!): Genre
+  deleteArtist(id: Int!): Artist
+  deleteSong(id: Int!): Song
 }

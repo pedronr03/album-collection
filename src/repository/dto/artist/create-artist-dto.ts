@@ -1,3 +1,3 @@
-export interface CreateArtistDto {
+export default interface CreateArtistDto {
   name: string
 }
