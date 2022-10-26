@@ -17,6 +17,7 @@ DB_PASSWORD=
 DB_HOST=
 ```
 ### Built with:
+- [Node.js](https://nodejs.org/en/)
 - [Typescript](https://www.typescriptlang.org/)
 - [GraphQL](https://graphql.org/)
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
